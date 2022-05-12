@@ -15,6 +15,7 @@ public class gunPistol : MonoBehaviour
 
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
+    public AudioSource gunFireSound;
 
     public int currentAmmo;
     public int mag_size = 10;
@@ -87,6 +88,7 @@ public class gunPistol : MonoBehaviour
     private void Fire()
     {
         muzzleFlash.Play();
+        gunFireSound.Play();
         current_magAmmo--;
         Vector3 ShootDiraction = fpsCam.transform.forward;
         ShootDiraction.x += Random.Range(-bulletSpread, bulletSpread);

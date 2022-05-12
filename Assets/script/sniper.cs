@@ -15,6 +15,7 @@ public class sniper : MonoBehaviour
 
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
+    public AudioSource gunFireSound;
 
     public int currentAmmo;
     public int mag_size = 10;
@@ -84,6 +85,7 @@ public class sniper : MonoBehaviour
 
     private void Fire()
     {
+        gunFireSound.Play();
         muzzleFlash.Play();
         current_magAmmo--;
 
